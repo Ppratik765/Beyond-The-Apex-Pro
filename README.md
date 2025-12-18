@@ -6,8 +6,8 @@ Beyond The Apex PRO is an F1 telemetry and race strategy platform built on FastF
 ## ✨ Features
 
 ### 🏁 Race Strategy & Overview
-* **Lap Time Distribution:** Jittered scatter plots to visualize pace consistency and outliers across the grid.
-* **Tyre Strategy Visualization:** a "Pit Wall" style bar chart showing tyre compounds (Soft, Medium, Hard, Inter, Wet), stint lengths, and pit stop sequences.
+* **Lap Time Distribution:** Jittered scatter plots to visualise pace consistency and outliers across the grid.
+* **Tyre Strategy Visualisation:** a "Pit Wall" style bar chart showing tyre compounds (Soft, Medium, Hard, Inter, Wet), stint lengths, and pit stop sequences.
 * **Session Context:** Automatically detects and displays the Race Winner, Sprint Winner, or Practice Session leader.
 * **Weather Widget:** Real-time (historical) track temp, air temp, humidity, and rainfall status.
 
