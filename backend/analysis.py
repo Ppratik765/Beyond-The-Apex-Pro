@@ -3,17 +3,26 @@ import pandas as pd
 import numpy as np
 import os
 import datetime
+import shutil
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
-if os.environ.get('VERCEL'):
-    CACHE_DIR = "/tmp/fastf1_cache"
-else:
+# --- VERCEL CACHE FIX ---
+# Check if we are running in a read-only environment (like Vercel)
+# We use /tmp which is writable
+if os.access(BASE_DIR, os.W_OK):
     CACHE_DIR = os.path.join(BASE_DIR, 'cache')
+else:
+    CACHE_DIR = "/tmp/fastf1_cache"
 
+# Create cache dir if it doesn't exist
 if not os.path.exists(CACHE_DIR):
-    os.makedirs(CACHE_DIR)
-fastf1.Cache.enable_cache(CACHE_DIR)
+    os.makedirs(CACHE_DIR, exist_ok=True)
+
+try:
+    fastf1.Cache.enable_cache(CACHE_DIR)
+except Exception as e:
+    print(f"Warning: Could not enable cache: {e}")
 
 # --- HELPER FUNCTIONS ---
 def get_available_years():
@@ -327,3 +336,4 @@ def generate_ai_insights(multi_data, k1, k2):
     unique_insights = list(set(insights))
 
     return unique_insights[:15] if unique_insights else ["No significant differences found."]
+
