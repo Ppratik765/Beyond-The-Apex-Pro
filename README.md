@@ -4,6 +4,8 @@ Beyond The Apex PRO is an F1 telemetry and race strategy platform built on FastF
 ## Website Link
 https://beyond-the-apex-pro.up.railway.app/
 
+Free trial for railway.app only last for 30 day. The website will not work after that
+
 ## Project Screenshot
 <img width="1891" height="941" alt="image" src="https://github.com/user-attachments/assets/c11f9165-d65b-44df-be05-858801adc1c9" />
 <img width="1894" height="872" alt="image" src="https://github.com/user-attachments/assets/c2ab178b-441a-43ec-bc3f-5794f510119a" />
