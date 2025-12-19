@@ -5,7 +5,12 @@ import os
 import datetime
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-CACHE_DIR = os.path.join(BASE_DIR, 'cache')
+
+if os.environ.get('VERCEL'):
+    CACHE_DIR = "/tmp/fastf1_cache"
+else:
+    CACHE_DIR = os.path.join(BASE_DIR, 'cache')
+
 if not os.path.exists(CACHE_DIR):
     os.makedirs(CACHE_DIR)
 fastf1.Cache.enable_cache(CACHE_DIR)
@@ -320,4 +325,5 @@ def generate_ai_insights(multi_data, k1, k2):
                  speed_diff = np.mean(speed1[mask]) - np.mean(speed2[mask])
                  if abs(speed_diff) > 3: insights.append(f"Straight at {start}m: {gainer} faster by {int(abs(speed_diff))}km/h.")
     unique_insights = list(set(insights))
+
     return unique_insights[:15] if unique_insights else ["No significant differences found."]
