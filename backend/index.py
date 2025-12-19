@@ -99,3 +99,4 @@ def analyze_endpoint(year: int, race: str, session: str, drivers: str, specific_
 if __name__ == "__main__":
     import uvicorn
     uvicorn.run(app, host="0.0.0.0", port=8000)
+
